@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Family Meeting: Roles and Fair-Talk Scripts — The Downsizing Parent Guide</title>
+<style>
+:root {
+  --ink: #2c2a26;
+  --paper: #fbf8f2;
+  --card: #ffffff;
+  --warm: #b4552d;
+  --warm-soft: #f3e2d8;
+  --line: #e3dcd0;
+  --muted: #7a746a;
+  --ok: #3e7048;
+  --warn: #8a5a00;
+  --link: #7a4a18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 3px solid var(--warm);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--warm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.topnav > a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.topnav > a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+.topnav > a:hover { background: var(--warm-soft); }
+
+.nav-group { font-family: 'Segoe UI', system-ui, sans-serif; }
+.nav-group summary {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary::before { content: '▸ '; color: var(--muted); }
+.nav-group[open] summary::before { content: '▾ '; }
+.nav-group summary:hover { background: var(--warm-soft); }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+  min-width: 210px;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.nav-links a:hover { background: var(--warm-soft); }
+.nav-links a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+
+.page { max-width: 46rem; margin: 24px auto 48px; padding: 0 20px; }
+
+article h1 { font-size: 2rem; line-height: 1.25; margin: 0.6em 0 0.7em; color: var(--warm); }
+article h2 { font-size: 1.4rem; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+article p { margin: 0.9em 0; }
+article a { color: var(--link); }
+article ul, article ol { padding-left: 1.5em; }
+article li { margin: 0.35em 0; }
+article ul ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 18px;
+  background: var(--warm-soft);
+  border-left: 4px solid var(--warm);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p { margin: 0.4em 0; }
+
+pre {
+  background: #f2eee6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2eee6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--warm-soft); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 0.88rem; }
+tbody tr:nth-child(even) { background: #fdfbf7; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+
+.checkbox { color: var(--warm); font-size: 1.1em; margin-right: 6px; }
+worksheet { }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+.prevnext a {
+  color: var(--warm);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prevnext a:hover { background: var(--warm-soft); }
+.prevnext.muted, .muted { color: var(--muted); }
+
+.worksheet article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.site-footer .fineprint { max-width: 40rem; margin: 6px auto 0; font-size: 0.82rem; }
+
+@media print {
+  .site-header, .prevnext, .site-footer { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .worksheet article, article { border: none; padding: 0; }
+  pre { border: 1px solid #999; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">The Downsizing Parent Guide</a>
+  <nav class="topnav">
+    <a href="index.html" class="">Home</a>
+<details class="nav-group" open><summary>Chapters</summary><div class="nav-links"><a href="00-welcome.html">0. Welcome</a>
+<a href="01-family-meeting.html" class="active">1. Family Meeting</a>
+<a href="02-room-by-room.html">2. Room by Room</a>
+<a href="03-heirloom-cards.html">3. Heirloom Cards</a>
+<a href="04-donation-pickup.html">4. Donation Pickup</a>
+<a href="05-floor-plan.html">5. Floor Plan</a>
+<a href="06-estate-sale-vs-auction.html">6. Estate Sale vs Auction</a></div></details>
+<details class="nav-group" ><summary>Worksheets</summary><div class="nav-links"><a href="worksheets/family-meeting-agenda.html" class="">Family-Meeting Agenda</a>
+<a href="worksheets/room-sort-worksheet.html" class="">Room-Sort Worksheet</a></div></details>
+<a href="glossary.html" class="">Glossary</a>
+  </nav>
+</header>
+<main class="page ">
+<nav class="prevnext top"><a href="00-welcome.html" class="prev">← Welcome</a>
+<a href="02-room-by-room.html" class="next">Room by Room →</a></nav>
+<article>
+<h1>The Family Meeting: Roles and Fair-Talk Scripts</h1>
+<p>The single biggest predictor of a calm downsizing isn't the number of boxes — it's whether the family agrees on <strong>who decides what, before</strong> the sorting starts. This chapter gives you an agenda that actually holds attention, sibling-role options, and word-for-word scripts for the hard moments.</p>
+<blockquote>
+<p><strong>Reminder:</strong> This guide is education only — not legal or financial advice. Nothing in this chapter substitutes for your family's attorney, CPA, or your parent's own advisors, especially when the conversation touches inheritance or who legally owns what.</p>
+</blockquote>
+<h2>Before you schedule: the two ground rules</h2>
+<p><strong>Ground rule 1 — Your parent leads.</strong> It's their home and their belongings. The meeting's job is to support their decisions, not to override them. If a parent has memory loss or significant health needs, the trusted contact or person with decision-making authority (often defined in a power of attorney — see "Ask a professional" topics in the Glossary) speaks <em>with</em> them, not <em>for</em> them, whenever possible.</p>
+<p><strong>Ground rule 2 — Talk about fairness early.</strong> Most sibling conflict isn't really about the dresser. It's about fear of being treated unfairly. Naming the fairness question out loud, on purpose, in meeting one, drains most of its power later.</p>
+<h2>The agenda (one page, 60 minutes)</h2>
+<p>The full, ready-to-print agenda lives on the <a href="worksheets/family-meeting-agenda.html">Family-Meeting Agenda worksheet</a>. The skeleton:</p>
+<ol>
+<li><strong>Why we're here</strong> — Parent states the goal in their own words (3 min)</li>
+<li><strong>The picture</strong> — New place, rough dates, budget topics for <em>professionals</em> (5 min)</li>
+<li><strong>Roles</strong> — Match a role to each person (15 min)</li>
+<li><strong>The fairness conversation</strong> — Use the fairness opener script (10 min)</li>
+<li><strong>Ground rules for disagreements</strong> — Use the disagreement script (5 min)</li>
+<li><strong>Communications</strong> — How updates will be shared (5 min)</li>
+<li><strong>Next steps and who does what by when</strong> (15 min)</li>
+<li><strong>Something human</strong> — End with tea, a photo, or one good story (2 min)</li>
+</ol>
+<h2>Sibling roles: a menu, not a mandate</h2>
+<p>Hand out roles like a coat at the door. One person can hold two (if they want); nobody should hold six. Every role must have a name attached — "we'll figure it out later" is where projects die.</p>
+<table>
+<thead>
+<tr><th>Role</th><th>What it means</th><th>Best suited to someone who…</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>The Anchor</strong></td><td>Talks with your parent daily; protects their voice in decisions</td><td>Has the closest relationship or the most flexible time</td></tr>
+<tr><td><strong>The Calendar Keeper</strong></td><td>Owns dates: keepers truck, donation pickups, measured day, movers</td><td>Loves a spreadsheet and a reminder app</td></tr>
+<tr><td><strong>The Box Boss</strong></td><td>Organizes supplies, labels, the staging zone, and room-by-room order</td><td>Physically handy, likes systems</td></tr>
+<tr><td><strong>The Donation Runner</strong></td><td>Owns Chapter 4 end-to-end (charities, pickups, receipts)</td><td>Persistent with phone calls</td></tr>
+<tr><td><strong>The Numbers Person</strong></td><td>Tracks spending with your parent; flags items that need a professional opinion</td><td>Comfortable saying "let's ask the attorney"</td></tr>
+<tr><td><strong>The Story Catcher</strong></td><td>Records the <em>why</em> behind keeps and heirlooms; writes the heirloom cards</td><td>Patient behind a phone camera</td></tr>
+<tr><td><strong>The Peacekeeper</strong></td><td>Watches for tension and calls for breaks using the agreed signal</td><td>Everyone trusts them equally</td></tr>
+</tbody>
+</table>
+<p>A solo child does all of these. Say that out loud in the meeting, ask for one even tiny task from others, and consider the "ask-a-friend" note below.</p>
+<p><strong>If the family is you, a hostile sibling, and a parent who won't choose sides:</strong> downsize the meeting. Roles for two become: Anchor (you), Calendar Keeper (you), Peacekeeper (a neutral cousin, a parent's friend, a family mediator, or a clergy member you all respect). Inviting one neutral, non-inheriting adult halved-halves most arguments.</p>
+<h2>Fair-talk scripts</h2>
+<p>Scripts work because re-hearsing kindness is easier than improvising it when your hands are shaking. Copy them, say them in your own words, and keep the <em>structure</em> (affirm → ask → agree on next step).</p>
+<h3>1. The fairness opener</h3>
+<p>Use in every meeting, ideally meeting one:</p>
+<blockquote>
+<p>"Mom, before we plan anything, we want to say something out loud: different kids will help differently, and some things may feel unfair down the road. If we talk about that <em>now</em>, on purpose, we think it'll be easier later. How would <em>you</em> like keepsakes and meaningful things handled?"</p>
+</blockquote>
+<p>Then try the sibling version:</p>
+<blockquote>
+<p>"We're not going to fight over things. But let's get one sentence out of everyone about what 'fair' means to them, so when the hard box day comes, we're agreeing to words someone already said calmly."</p>
+</blockquote>
+<h3>2. When one sibling wants a specific item</h3>
+<p>Say it early, in front of everyone:</p>
+<blockquote>
+<p>"Sam, you've mentioned you really want Grandma's recipe box. Can you say why in one sentence? … Okay. Dad, does that work for you? If both feel good, let's write it on a <a href="03-heirloom-cards.html">heirloom card</a> right now, before anyone changes their mind."</p>
+</blockquote>
+<h3>3. When a sibling says "I shouldn't have to do anything"</h3>
+<blockquote>
+<p>"You're right — nobody <em>has</em> to. Every role is a volunteer role. But something has to be true about the calendar, so: could you own <em>one</em> pickup call to the charity? Twenty minutes, all of it from your couch. Or is there a different twenty minutes you could give?"</p>
+</blockquote>
+<h3>4. When a sibling accuses someone of taking over</h3>
+<blockquote>
+<p>"You could be right from where you sit. Let's say the over-functioning out loud and then rebalance: which of the six roles do you want, by name? I'll hand them over this week — I promise it's easier on me."</p>
+</blockquote>
+<h3>5. The stop signal (agreed in the meeting)</h3>
+<p>Pick a code word ahead of time — "taco," "Blue Lake," anything. When someone says it, everyone takes a 20-minute break. No negotiations, no guilt. Tense conversations after a Taco never improve the outcome.</p>
+<h3>6. When your parent says "just take whatever's fine" (nothing is fine)</h3>
+<blockquote>
+<p>"It matters to us <em>because</em> it matters to you — which one of us gets the mantel clock. It'll take ten minutes. Want to pick today, or should we pick with you Thursday over lunch?"</p>
+</blockquote>
+<h3>7. When the conversation turns legal-ish</h3>
+<p>Money, ownership, wills, inheritance, or "who legally owns this property" — that's when you gracefully slide to neutral ground:</p>
+<blockquote>
+<p>"Great question — that's above our pay grade, and honestly above this table. Let's write it on the 'Ask a professional' list for the attorney/CPA we book this month."</p>
+</blockquote>
+<p>That last script is the single most powerful sibling-fight deflector in this manual. Bills ideas for separate professional opinions take personal opinion off the table.</p>
+<h2>Communication rhythm that keeps siblings calm</h2>
+<ul>
+<li><strong>One shared channel.</strong> A group text or a shared note. No parallel side-chats with the parent about big decisions — side-chats are where trust goes to die.</li>
+<li><strong>Weekly one-paragraph update.</strong> "Week 3: kitchen done, two donation pickups booked for the 14th, garage booked for the 21st. Need: someone to help tape 40 boxes on Saturday."</li>
+<li><strong>Decisions in writing, decisions by deadline.</strong> "Heirloom picks due by the 15th, first come as of that date" beats a thousand emotional ad-hoc trades.</li>
+</ul>
+<h2>What meeting logistics actually look like</h2>
+<ul>
+<li><strong>60 minutes max</strong> for the first meeting. Everything pours better in short sessions.</li>
+<li><strong>At the parent's table if possible</strong>, so their chair is visibly the chair that matters.</li>
+<li><strong>Bring the printed agenda</strong> (Chapter worksheets). Agenda tension is real tension reduction.</li>
+<li><strong>Someone writes down what got decided</strong> and posts it in the shared channel the same day. Unwritten agreements don't exist; they just wait to become fights.</li>
+</ul>
+<h2>If a meeting goes sideways anyway</h2>
+<p>Totally normal. Pause with the stop signal, reschedule for one week out, and shrink the agenda to a single item: "The fairness conversation, from Step 4 only." A small honest meeting beats a big dishonest one every single time.</p>
+<p>Next up: sorting rooms one at a time, without the overwhelm. Bring the popcorn. Or the taco.</p>
+
+</article>
+<nav class="prevnext bottom"><a href="00-welcome.html" class="prev">← Welcome</a>
+<a href="02-room-by-room.html" class="next">Room by Room →</a></nav>
+</main>
+<footer class="site-footer">
+  <p><strong>The Downsizing Parent Guide</strong> © Asdale Dynamics, LLC 2026</p>
+  <p class="fineprint">Education only — this site is general information, not legal, financial, tax, or medical advice. For document, appraisal, contract, or money questions, please bring real numbers to a local professional.</p>
+</footer>
+</body>
+</html>

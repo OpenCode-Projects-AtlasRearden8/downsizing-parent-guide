@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donation Pickup Planning — The Downsizing Parent Guide</title>
+<style>
+:root {
+  --ink: #2c2a26;
+  --paper: #fbf8f2;
+  --card: #ffffff;
+  --warm: #b4552d;
+  --warm-soft: #f3e2d8;
+  --line: #e3dcd0;
+  --muted: #7a746a;
+  --ok: #3e7048;
+  --warn: #8a5a00;
+  --link: #7a4a18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 3px solid var(--warm);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--warm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.topnav > a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.topnav > a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+.topnav > a:hover { background: var(--warm-soft); }
+
+.nav-group { font-family: 'Segoe UI', system-ui, sans-serif; }
+.nav-group summary {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary::before { content: '▸ '; color: var(--muted); }
+.nav-group[open] summary::before { content: '▾ '; }
+.nav-group summary:hover { background: var(--warm-soft); }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+  min-width: 210px;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.nav-links a:hover { background: var(--warm-soft); }
+.nav-links a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+
+.page { max-width: 46rem; margin: 24px auto 48px; padding: 0 20px; }
+
+article h1 { font-size: 2rem; line-height: 1.25; margin: 0.6em 0 0.7em; color: var(--warm); }
+article h2 { font-size: 1.4rem; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+article p { margin: 0.9em 0; }
+article a { color: var(--link); }
+article ul, article ol { padding-left: 1.5em; }
+article li { margin: 0.35em 0; }
+article ul ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 18px;
+  background: var(--warm-soft);
+  border-left: 4px solid var(--warm);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p { margin: 0.4em 0; }
+
+pre {
+  background: #f2eee6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2eee6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--warm-soft); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 0.88rem; }
+tbody tr:nth-child(even) { background: #fdfbf7; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+
+.checkbox { color: var(--warm); font-size: 1.1em; margin-right: 6px; }
+worksheet { }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+.prevnext a {
+  color: var(--warm);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prevnext a:hover { background: var(--warm-soft); }
+.prevnext.muted, .muted { color: var(--muted); }
+
+.worksheet article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.site-footer .fineprint { max-width: 40rem; margin: 6px auto 0; font-size: 0.82rem; }
+
+@media print {
+  .site-header, .prevnext, .site-footer { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .worksheet article, article { border: none; padding: 0; }
+  pre { border: 1px solid #999; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">The Downsizing Parent Guide</a>
+  <nav class="topnav">
+    <a href="index.html" class="">Home</a>
+<details class="nav-group" open><summary>Chapters</summary><div class="nav-links"><a href="00-welcome.html">0. Welcome</a>
+<a href="01-family-meeting.html">1. Family Meeting</a>
+<a href="02-room-by-room.html">2. Room by Room</a>
+<a href="03-heirloom-cards.html">3. Heirloom Cards</a>
+<a href="04-donation-pickup.html" class="active">4. Donation Pickup</a>
+<a href="05-floor-plan.html">5. Floor Plan</a>
+<a href="06-estate-sale-vs-auction.html">6. Estate Sale vs Auction</a></div></details>
+<details class="nav-group" ><summary>Worksheets</summary><div class="nav-links"><a href="worksheets/family-meeting-agenda.html" class="">Family-Meeting Agenda</a>
+<a href="worksheets/room-sort-worksheet.html" class="">Room-Sort Worksheet</a></div></details>
+<a href="glossary.html" class="">Glossary</a>
+  </nav>
+</header>
+<main class="page ">
+<nav class="prevnext top"><a href="03-heirloom-cards.html" class="prev">← Heirloom Cards</a>
+<a href="05-floor-plan.html" class="next">Floor Plan →</a></nav>
+<article>
+<h1>Donation Pickup Planning</h1>
+<p>The unsorted box has a natural enemy, and it isn't willpower — it's <strong>a scheduled pickup</strong>. A truck coming Tuesday turns "we should really sort the den" into a deadline with a motor. This chapter gets items from the staging zone to charities, with logistics you can actually run from your kitchen table.</p>
+<blockquote>
+<p>Heads-up: charities and local rules vary by city and change often. Everything here is a planning framework — <strong>confirm hours, accepted items, and pick-with-a-fee policies with the charity directly</strong> before booking.</p>
+</blockquote>
+<h2>Step 1 — Build the shortlist (one evening, 45 minutes)</h2>
+<p>Before any phone call, make two lists:</p>
+<ol>
+<li><strong>What you'll have:</strong> rough counts by category from your <a href="worksheets/room-sort-worksheet.html">Room-Sort Worksheets</a> — e.g., "6 boxes of linens, 4 boxes of books, 2 armchairs, 1 loveseat."</li>
+<li><strong>Who takes what:</strong> search for local charities and note their categories. Typical splits:
+<ul>
+<li><strong>General-resale chains</strong> (Goodwill-style): clothes, books, small household, toys.</li>
+<li><strong>Furniture-and-household ministries or reuse centers</strong>: furniture, kitchenware, small appliances in working order.</li>
+<li><strong>Book-specific</strong>, tool-specific, craft-specific shops and library friends-of groups.</li>
+<li><strong>Building-material reuse</strong> (like Habitat-style ReStores): doors, cabinets, lumber, name-brand appliances.</li>
+<li><strong>Specialty collectors</strong>: eye-glasses, hearing-aid recycling, professional clothing, pet gear.</li>
+</ul>
+
+</li>
+</ol>
+<p>Only local-first realities apply here: what's 15 minutes away beats what's theoretically better. Bookmark each candidate's <em>accepted-items</em> page, and start a note per charity.</p>
+<h2>Step 2 — Set the pickup calendar backward</h2>
+<p>Donations that "wait for a free Saturday" wait forever. Do it the other way:</p>
+<ol>
+<li><strong>Get the moving day date</strong> (or the estate-sale date) from your <a href="01-family-meeting.html">Calendar Keeper</a>.</li>
+<li><strong>Place pickups at the end of each room's sorting sequence</strong> — the room <em>finishes</em> into a truck, not into more boxes.</li>
+<li><strong>Leave a buffer pickup</strong> two weeks before move-out for the stragglers that always appear.</li>
+<li><strong>Sellables first.</strong> Anything going to a sale (<a href="06-estate-sale-vs-auction.html">Chapter 6</a>) gets pulled out <em>before</em> the donate pile shrinks it. Reversible order mistake, annoying week.</li>
+</ol>
+<p>Rule of thumb: two pickups a month beats one heroic junk-ton day your parent has to witness. Smaller matching pickups are also easier on the neighbors' eyes and your parent's goodbye-by-installments.</p>
+<h2>Step 3 — Make the ask (a script that respects the charity)</h2>
+<p>Most donation lines are a variant of this, so write your own once and reuse it:</p>
+<blockquote>
+<p>"Hi! We're helping my mother downsize, and we're in [ZIP]. We have roughly [counts]. Two questions: do you do at-home pickup in our area, and are there items you can't take? .. Great. Can we get on a [month] list? .. Perfect, and can you text or email a confirmation with a window? Thank you — this is a big help to us."</p>
+</blockquote>
+<p><strong>Write down at booking time:</strong> date, window, what charity name the driver will say, whether pickup is free, whether a receipt is left, and the cancellation phone number. Pickup gaps are the #1 chaos source here; the cancellation number is your friend.</p>
+<p>Confirm <strong>the day before</strong> every pickup. The 10-minute call saves an entire lost Tuesday.</p>
+<h2>Step 4 — Prep the night before (30 minutes)</h2>
+<ul>
+<li>Boxes labeled in marker big enough to read from ten feet: what it is, which room it came from.</li>
+<li>Furniture: wipe down, legs' hardware taped to the underside in a bag, drawers emptied and <em>loose</em> wrapped in the liner.</li>
+<li>Everything inside the front door or garage, protected from rain, with a folding path cleared. (Drivers generally won't walk past the threshold for liability reasons — staging inside the door is the magic zone.)</li>
+<li>A printed <strong>one-page manifest</strong> summarizing counts by category, taped near the door: saves ten minutes of "what's all this?" and helps the receipt.</li>
+<li>Your parent's choice on presence: some like to wave; it's better to ask than assume they want to watch.</li>
+</ul>
+<h2>Step 5 — Receipts and the two lists</h2>
+<p>Two things to capture for every pickup:</p>
+<ul>
+<li><strong>The receipt</strong> (charity name, date, list). If you or your parent itemize taxes, talk with your CPA about what's deductible — valuation rules are genuinely professional territory and out of scope for this free guide. Otherwise, the receipt is simply a nice record that good things went to good places.</li>
+<li><strong>The "where it went" list</strong> for the family shared channel: keeps future family questions short ("the yellow boxes went to Charity A on the 14th") and gives your Story Catcher something to log.</li>
+</ul>
+<h2>Small-scale alternatives when a truck won't fit</h2>
+<ul>
+<li><strong>Buy-nothing / neighborhood groups:</strong> fast, oddly emotional in a good way ("someone is <em>thrilled</em> about the teacups tonight").</li>
+<li><strong>Building-material reuse centers:</strong> for leftover lumber, doors, and cabinets, call ahead — some centers accept homeowner drop-offs, some have list requirements, and some partner with contractors.</li>
+<li><strong>Schools, scout troops, theaters:</strong> love clean junk and craft supplies; a call to the front office is all it takes.</li>
+<li><strong>Textile recycling bins:</strong> the truly-not-wearable pile — cut off usable buttons and zippers first if your parent likes a small ceremony.</li>
+<li><strong>The donate-first rule:</strong> when the garage overflows faster than pickups arrive, request <em>more frequent smaller</em> pickups rather than storing overflow in living areas. Overflow is a signal your calendar needs another truck, not that your parent needs more shame.</li>
+</ul>
+<h2>The emotional part nobody plans for</h2>
+<p>Items leaving visibly is a milestone, and milestones can hit hard. Ideas: take a photo of the first truck loaded, watch it pull away together, then have the cookie (see <a href="02-room-by-room.html">Overwhelm emergency kit</a>). If your parent wants a "last look" ritual, honor it — five minutes of goodbyes by category will save you five hours of regret later.</p>
+<p>Next: making sure the new place can actually hold the keepers — with a tape measure and a piece of graph paper.</p>
+
+</article>
+<nav class="prevnext bottom"><a href="03-heirloom-cards.html" class="prev">← Heirloom Cards</a>
+<a href="05-floor-plan.html" class="next">Floor Plan →</a></nav>
+</main>
+<footer class="site-footer">
+  <p><strong>The Downsizing Parent Guide</strong> © Asdale Dynamics, LLC 2026</p>
+  <p class="fineprint">Education only — this site is general information, not legal, financial, tax, or medical advice. For document, appraisal, contract, or money questions, please bring real numbers to a local professional.</p>
+</footer>
+</body>
+</html>

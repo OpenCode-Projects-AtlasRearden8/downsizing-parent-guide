@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Room-Sort Worksheet (Printable) — The Downsizing Parent Guide</title>
+<style>
+:root {
+  --ink: #2c2a26;
+  --paper: #fbf8f2;
+  --card: #ffffff;
+  --warm: #b4552d;
+  --warm-soft: #f3e2d8;
+  --line: #e3dcd0;
+  --muted: #7a746a;
+  --ok: #3e7048;
+  --warn: #8a5a00;
+  --link: #7a4a18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 3px solid var(--warm);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--warm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.topnav > a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.topnav > a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+.topnav > a:hover { background: var(--warm-soft); }
+
+.nav-group { font-family: 'Segoe UI', system-ui, sans-serif; }
+.nav-group summary {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary::before { content: '▸ '; color: var(--muted); }
+.nav-group[open] summary::before { content: '▾ '; }
+.nav-group summary:hover { background: var(--warm-soft); }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+  min-width: 210px;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.nav-links a:hover { background: var(--warm-soft); }
+.nav-links a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+
+.page { max-width: 46rem; margin: 24px auto 48px; padding: 0 20px; }
+
+article h1 { font-size: 2rem; line-height: 1.25; margin: 0.6em 0 0.7em; color: var(--warm); }
+article h2 { font-size: 1.4rem; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+article p { margin: 0.9em 0; }
+article a { color: var(--link); }
+article ul, article ol { padding-left: 1.5em; }
+article li { margin: 0.35em 0; }
+article ul ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 18px;
+  background: var(--warm-soft);
+  border-left: 4px solid var(--warm);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p { margin: 0.4em 0; }
+
+pre {
+  background: #f2eee6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2eee6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--warm-soft); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 0.88rem; }
+tbody tr:nth-child(even) { background: #fdfbf7; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+
+.checkbox { color: var(--warm); font-size: 1.1em; margin-right: 6px; }
+worksheet { }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+.prevnext a {
+  color: var(--warm);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prevnext a:hover { background: var(--warm-soft); }
+.prevnext.muted, .muted { color: var(--muted); }
+
+.worksheet article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.site-footer .fineprint { max-width: 40rem; margin: 6px auto 0; font-size: 0.82rem; }
+
+@media print {
+  .site-header, .prevnext, .site-footer { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .worksheet article, article { border: none; padding: 0; }
+  pre { border: 1px solid #999; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">The Downsizing Parent Guide</a>
+  <nav class="topnav">
+    <a href="index.html" class="">Home</a>
+<details class="nav-group" ><summary>Chapters</summary><div class="nav-links"><a href="00-welcome.html">0. Welcome</a>
+<a href="01-family-meeting.html">1. Family Meeting</a>
+<a href="02-room-by-room.html">2. Room by Room</a>
+<a href="03-heirloom-cards.html">3. Heirloom Cards</a>
+<a href="04-donation-pickup.html">4. Donation Pickup</a>
+<a href="05-floor-plan.html">5. Floor Plan</a>
+<a href="06-estate-sale-vs-auction.html">6. Estate Sale vs Auction</a></div></details>
+<details class="nav-group" open><summary>Worksheets</summary><div class="nav-links"><a href="worksheets/family-meeting-agenda.html" class="">Family-Meeting Agenda</a>
+<a href="worksheets/room-sort-worksheet.html" class="active">Room-Sort Worksheet</a></div></details>
+<a href="glossary.html" class="">Glossary</a>
+  </nav>
+</header>
+<main class="page worksheet">
+<nav class="prevnext top"><a href="worksheets/family-meeting-agenda.html" class="prev">← Family-Meeting Agenda</a>
+<span class="next muted"></span></nav>
+<article>
+<h1>Room-Sort Worksheet (Printable)</h1>
+<blockquote>
+<p>Print one per room per session. Tape it to the doorway. The 45-minute timer is more important than finishing the room — see <a href="02-room-by-room.html">Room by Room</a> for the four doors and the session plan.</p>
+</blockquote>
+<pre><code>ROOM: ______________________      SESSION #: _____    DATE: ____/____/____
+SESSION PLAN (check one): □ cabinet days  □ flat surfaces  □ closet
+                          □ decide pass   □ haul photos    □ full first pass
+TIMER STARTED AT: ________    STOP-SIGNAL WORD: ______________________</code></pre>
+<hr>
+<h2>Session goals (pick no more than two)</h2>
+<ul>
+<li><span class="checkbox" aria-hidden="true">☐</span>Whole room rough-sorted (stickers only, no debating)</li>
+<li><span class="checkbox" aria-hidden="true">☐</span>Decide pass on one color (green pile saved for last, always)</li>
+<li><span class="checkbox" aria-hidden="true">☐</span>At least one full drawer or shelf done <em>entirely</em></li>
+<li><span class="checkbox" aria-hidden="true">☐</span>Furniture measured for the <a href="05-floor-plan.html">floor plan</a></li>
+<li><span class="checkbox" aria-hidden="true">☐</span>One-box minimum: _______ boxes of true let-go actually left the house</li>
+</ul>
+<h2>The four doors running count</h2>
+<table>
+<thead>
+<tr><th>Door</th><th>Started with</th><th>Ended with</th></tr>
+</thead>
+<tbody>
+<tr><td>Keep (green)</td><td>_______ items/boxes</td><td>_______</td></tr>
+<tr><td>Gift (blue)</td><td>_______</td><td>_______</td></tr>
+<tr><td>Donate/Sell (yellow)</td><td>_______</td><td>_______</td></tr>
+<tr><td>Let go (red)</td><td>_______</td><td>_______</td></tr>
+</tbody>
+</table>
+<h2>Late-Decide items (blue gets a photo + a revisit date)</h2>
+<table>
+<thead>
+<tr><th>Item photographed</th><th>Where it is now</th><th>Revisit date</th></tr>
+</thead>
+<tbody>
+<tr><td>______________</td><td>______________</td><td>____/____</td></tr>
+<tr><td>______________</td><td>______________</td><td>____/____</td></tr>
+<tr><td>______________</td><td>______________</td><td>____/____</td></tr>
+</tbody>
+</table>
+<h2>Story catches (for the Story Catcher)</h2>
+<table>
+<thead>
+<tr><th>Item</th><th>One-sentence story recorded? (Y/N)</th><th>Heirloom card done?</th></tr>
+</thead>
+<tbody>
+<tr><td>______________</td><td>____</td><td>□ done □ pending</td></tr>
+<tr><td>______________</td><td>____</td><td>□ done □ pending</td></tr>
+</tbody>
+</table>
+<h2>Safety / special-handling notes</h2>
+<ul>
+<li>□ Medications set aside for <a href="glossary.html">pharmacy take-back</a> — treated separately</li>
+<li>□ Batteries/paint/chemicals flagged for county hazardous-waste drop-off</li>
+<li>□ Electronics: photos/drives checked <em>with parent</em> before wiping or donating</li>
+<li>□ Legal-ish papers found → "Ask a professional" pile, opened only with parent present</li>
+</ul>
+<h2>Donation pickup impact</h2>
+<ul>
+<li><span class="checkbox" aria-hidden="true">☐</span>Yellow boxes taped, labeled, and staged in the staging zone: _______ boxes</li>
+<li><span class="checkbox" aria-hidden="true">☐</span>Next pickup requested for: ____/____ (charity: ______________)</li>
+</ul>
+<h2>Header meta</h2>
+<pre><code>WHAT WENT WELL TODAY: _______________________________________________
+THE HARD MOMENT + WHAT HELPED: ______________________________________
+NEXT SESSION'S FIRST DRAWER/SHELF: __________________________________
+TIMER HONORED?  □ yes  □ we tried  → see the overwhelm emergency kit</code></pre>
+<hr>
+<p><em>Two-session-per-room is normal, especially bedrooms. The worksheet scores courage, not tonnage.</em></p>
+<p><em>Education only — see <a href="glossary.html">Glossary</a> for disposal basics, and your county site for local rules.</em></p>
+
+</article>
+<nav class="prevnext bottom"><a href="worksheets/family-meeting-agenda.html" class="prev">← Family-Meeting Agenda</a>
+<span class="next muted"></span></nav>
+</main>
+<footer class="site-footer">
+  <p><strong>The Downsizing Parent Guide</strong> © Asdale Dynamics, LLC 2026</p>
+  <p class="fineprint">Education only — this site is general information, not legal, financial, tax, or medical advice. For document, appraisal, contract, or money questions, please bring real numbers to a local professional.</p>
+</footer>
+</body>
+</html>

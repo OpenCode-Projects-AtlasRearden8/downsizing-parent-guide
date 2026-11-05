@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keep-Heirloom Decision Cards — The Downsizing Parent Guide</title>
+<style>
+:root {
+  --ink: #2c2a26;
+  --paper: #fbf8f2;
+  --card: #ffffff;
+  --warm: #b4552d;
+  --warm-soft: #f3e2d8;
+  --line: #e3dcd0;
+  --muted: #7a746a;
+  --ok: #3e7048;
+  --warn: #8a5a00;
+  --link: #7a4a18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 3px solid var(--warm);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--warm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.topnav > a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.topnav > a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+.topnav > a:hover { background: var(--warm-soft); }
+
+.nav-group { font-family: 'Segoe UI', system-ui, sans-serif; }
+.nav-group summary {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary::before { content: '▸ '; color: var(--muted); }
+.nav-group[open] summary::before { content: '▾ '; }
+.nav-group summary:hover { background: var(--warm-soft); }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+  min-width: 210px;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.nav-links a:hover { background: var(--warm-soft); }
+.nav-links a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+
+.page { max-width: 46rem; margin: 24px auto 48px; padding: 0 20px; }
+
+article h1 { font-size: 2rem; line-height: 1.25; margin: 0.6em 0 0.7em; color: var(--warm); }
+article h2 { font-size: 1.4rem; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+article p { margin: 0.9em 0; }
+article a { color: var(--link); }
+article ul, article ol { padding-left: 1.5em; }
+article li { margin: 0.35em 0; }
+article ul ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 18px;
+  background: var(--warm-soft);
+  border-left: 4px solid var(--warm);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p { margin: 0.4em 0; }
+
+pre {
+  background: #f2eee6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2eee6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--warm-soft); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 0.88rem; }
+tbody tr:nth-child(even) { background: #fdfbf7; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+
+.checkbox { color: var(--warm); font-size: 1.1em; margin-right: 6px; }
+worksheet { }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+.prevnext a {
+  color: var(--warm);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prevnext a:hover { background: var(--warm-soft); }
+.prevnext.muted, .muted { color: var(--muted); }
+
+.worksheet article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.site-footer .fineprint { max-width: 40rem; margin: 6px auto 0; font-size: 0.82rem; }
+
+@media print {
+  .site-header, .prevnext, .site-footer { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .worksheet article, article { border: none; padding: 0; }
+  pre { border: 1px solid #999; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">The Downsizing Parent Guide</a>
+  <nav class="topnav">
+    <a href="index.html" class="">Home</a>
+<details class="nav-group" open><summary>Chapters</summary><div class="nav-links"><a href="00-welcome.html">0. Welcome</a>
+<a href="01-family-meeting.html">1. Family Meeting</a>
+<a href="02-room-by-room.html">2. Room by Room</a>
+<a href="03-heirloom-cards.html" class="active">3. Heirloom Cards</a>
+<a href="04-donation-pickup.html">4. Donation Pickup</a>
+<a href="05-floor-plan.html">5. Floor Plan</a>
+<a href="06-estate-sale-vs-auction.html">6. Estate Sale vs Auction</a></div></details>
+<details class="nav-group" ><summary>Worksheets</summary><div class="nav-links"><a href="worksheets/family-meeting-agenda.html" class="">Family-Meeting Agenda</a>
+<a href="worksheets/room-sort-worksheet.html" class="">Room-Sort Worksheet</a></div></details>
+<a href="glossary.html" class="">Glossary</a>
+  </nav>
+</header>
+<main class="page ">
+<nav class="prevnext top"><a href="02-room-by-room.html" class="prev">← Room by Room</a>
+<a href="04-donation-pickup.html" class="next">Donation Pickup →</a></nav>
+<article>
+<h1>Keep-Heirloom Decision Cards</h1>
+<p>Some objects are easy. A 2007 phone charger is not a citizenship question. But the mantel clock, the wedding china, the fishing rods, Dad's tool bench — those need a <em>process</em>, and here it is. Decision cards turn "we can't possibly decide" into one small card at a time.</p>
+<h2>What a decision card is</h2>
+<p>A decision card is a single paper (or shared-doc row / photo note) that answers six short questions about <strong>one</strong> item. That's it. One item, one card, ten minutes or less. The card's job is not to be fancy; it's to make the decision <em>out loud, once, with witnesses</em> so nobody re-litigates it at Thanksgiving.</p>
+<blockquote>
+<p><strong>Fair-play reminder:</strong> where real or perceived value is significant, family decisions about who receives what belong to your parent, and anything touching legal title, estate documents, or taxes goes to the "Ask a professional" list from the <a href="01-family-meeting.html">Family Meeting chapter</a>. Cards are family-communication tools, not legal instruments.</p>
+</blockquote>
+<h2>The six fields</h2>
+<p>Copy this block onto a 3×5 card, or print our ready-made worksheet version:</p>
+<pre><code>ITEM:           (what it is, in five words)
+HISTORY:        (one sentence of story — "Grandma Ruth's, from...")
+KEEPER:         (name + "to the new place" / "mine to take")
+DESTINATION:    (new-home room, or sibling's address)
+SENTIMENT:      □ furniture-grade  □ story-grade  □ both
+STATUS:         □ decided  □ pending — review date: ____/____</code></pre>
+<p><strong>How to use the fields:</strong></p>
+<ul>
+<li><strong>HISTORY</strong> is the heart of the card. If nobody can write <em>one sentence</em> of story, that's useful data — the item may be "story-grade" only, meaning a photograph preserves what matters and the object itself can be released.</li>
+<li><strong>KEEPER</strong> names one adult human. "Family" is not a keeper. "Whoever" is not a keeper. <em>Names.</em> Empty keeper fields are how items end up in betrayal limbo.</li>
+<li><strong>SENTIMENT grades the attachment:</strong>
+<ul>
+<li><em>furniture-grade</em> — the physical thing is what matters (the dresser you actually use).</li>
+<li><em>story-grade</em> — the memory is what matters; a good photo + one recorded sentence preserves it (the six-piece china set used once a decade).</li>
+<li><em>both</em> — treat as furniture-grade, and capture the story anyway.</li>
+</ul>
+
+</li>
+<li><strong>STATUS:</strong> cards start as <em>pending</em> and only the parent upgrades them to <em>decided</em>. Pending cards get a review date, usually the next family visit.</li>
+</ul>
+<h2>The seven decision cards (starter deck)</h2>
+<p>To show the system at work, here are seven pre-written starter cards based on items families meet in nearly every downsizing. Use them as-is where they fit.</p>
+<h3>Card 1 — The heirloom no one will use</h3>
+<p><em>The example:</em> The hand-stitched quilt, delicate and lovely, that nobody's house can safely display.</p>
+<ul>
+<li>HISTORY: "Grandma Ruth made this the year Mom was born."</li>
+<li>SENTIMENT: story-grade. A museum-quality photo + the recorded story does the honoring.</li>
+<li>Fallback: if the parent really wants the object kept, gift it to the relative most likely to preserve it; write the keeper name on the card today.</li>
+<li>Let-go path: photograph → story → offer to keeper → otherwise donate if intact, or textile recycling. (A card like this is <em>how</em> letting go stops feeling like failure.)</li>
+</ul>
+<h3>Card 2 — The item two siblings both want</h3>
+<p><em>The example:</em> Dad's watch. Both kids want it. Parent won't choose.</p>
+<ul>
+<li>Never resolve this by silence, side-chats, or whichever sibling knows the estate lawyer's number.</li>
+<li>Script it: "We all love it. Let's each privately say in one sentence why, and then <strong>Dad</strong> decides. Anyone who didn't get picked gets the first pick of the <em>next</em> comparable item — we can sketch that priority order on a card now."</li>
+<li>Tie-break options, chosen by the parent: drawing straws; alternating top picks across a ranked list of heirlooms; or agreeing the item gets a shared future (rotating custody is real — some siblings literally trade custody of the clock twice a year, and the card logs that plan).</li>
+<li>If money-equity matters to the family, appraising items and crediting their value inside a larger inheritance conversation is <strong>a conversation for an attorney or CPA</strong>, and every member of this chapter will cheer you for making that call.</li>
+</ul>
+<h3>Card 3 — The "someday" heirloom (young person's future)</h3>
+<p><em>The example:</em> The train set for a grandchild who is four.</p>
+<ul>
+<li>Card it with a named adult custodian ("Held by Jess, to pass to Mia when she's grown") rather than pretending the four-year-old has a keeper opinion.</li>
+<li>Add a gentle re-review date. Kids change; storage space doesn't. The custodian may also, kindly, decide the story-grade version is enough in ten years. That's allowed.</li>
+</ul>
+<h3>Card 4 — The duplicated beloved object</h3>
+<p><em>The example:</em> Three rocking chairs. Everyone's favorite.</p>
+<ul>
+<li>Rank them openly (oldest? sturdiest? the one from the porch everyone sat on?).</li>
+<li>Assign each chair its own card; never one card for three chairs — "the chairs" is how nobody ends up with one.</li>
+<li>If there aren't enough keepers, remember: story-grade photos plural, one per chair.</li>
+</ul>
+<h3>Card 5 — The white elephant everyone privately dislikes</h3>
+<p><em>The example:</em> The enormous, slightly ugly grandfather clock nobody will admit they don't want.</p>
+<ul>
+<li>Use the polite-truth script: "It's big enough that our homes will honestly struggle with it. Does anyone actually want it? It's okay if the answer is no — we can photograph it beautifully and let it find a new family."</li>
+<li>Silence means no. Pity isn't a keeper; you already know what happens when items are kept out of guilt: they take room <em>and</em> they take a little peace.</li>
+<li>Estate-sale or auction paths can suit pieces like this — see <a href="06-estate-sale-vs-auction.html">Estate Sale vs. Auction</a>.</li>
+</ul>
+<h3>Card 6 — The parent's "you decide when I'm gone" item</h3>
+<p><em>The example:</em> "Just split everything fairly, kids, you'll figure it out." (You know the one.)</p>
+<ul>
+<li>Kind, honest response, in the meeting: "We love that you trust us. 'Fair' means different numbers to different people, though — let's name what fair means <em>now</em>, and for anything ambiguous we'll follow your cards. Even ten cards written today is a gift to all of us."</li>
+<li>If the parent truly wants to defer, the family's job is to set up a low-conflict process (ranked picks, rotating draft style, or an agreed appraiser) and to write <em>that process</em> on a card so future-you isn't improvising under grief.</li>
+<li>Estate documents themselves are professional territory. Full stop.</li>
+</ul>
+<h3>Card 7 — The mystery metal box</h3>
+<p><em>The example:</em> The locked tin in the closet that might be deeds, might be letters, might be a coin collection.</p>
+<ul>
+<li>Rule: open it <em>with your parent present</em>, camera on, nobody alone. Some boxes hold legal documents (→ professional pile, Glossary). Some hold three dollars in foreign currency and a 1975 map (→ charm, easy card).</li>
+<li>Never lose a mystery box in a donation truck. They get a card, even if the card says "photographed and story caught — contents posted for family."</li>
+</ul>
+<h2>Card logistics</h2>
+<ul>
+<li><strong>One shoebox or recipe box</strong> lives in the staging zone. Cards go in, in alphabetical or "by room" order. Pendings on top.</li>
+<li><strong>Photograph the finished card with the item</strong> before it leaves the house. The photo pair (item + card) is a gift future-you will not believe you made.</li>
+<li><strong>Cards are draftable on the spot.</strong> A sloppy pencil card written today beats a beautiful digital template that stays blank until the garage sale, which stays blank forever.</li>
+<li><strong>No card, no exit.</strong> Heirloom-grade items do not leave the house without a completed card. That single rule prevents 80% of post-move heartache. (Regular donate boxes, obviously, just go.)</li>
+</ul>
+<h2>A gentle closing thought</h2>
+<p>The card that says <em>story-grade</em> and lets an object go is often the hardest to write and the biggest relief to finish. Your parent's history lives in your family's telling of it, not in every box it sat inside. You're not throwing away the past — you're giving it better shelves.</p>
+<p>Up next: getting the *non*-heirlooms out the door with donation pickups that actually show up.</p>
+
+</article>
+<nav class="prevnext bottom"><a href="02-room-by-room.html" class="prev">← Room by Room</a>
+<a href="04-donation-pickup.html" class="next">Donation Pickup →</a></nav>
+</main>
+<footer class="site-footer">
+  <p><strong>The Downsizing Parent Guide</strong> © Asdale Dynamics, LLC 2026</p>
+  <p class="fineprint">Education only — this site is general information, not legal, financial, tax, or medical advice. For document, appraisal, contract, or money questions, please bring real numbers to a local professional.</p>
+</footer>
+</body>
+</html>

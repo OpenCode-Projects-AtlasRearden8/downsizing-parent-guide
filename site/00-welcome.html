@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome — and Take a Breath — The Downsizing Parent Guide</title>
+<style>
+:root {
+  --ink: #2c2a26;
+  --paper: #fbf8f2;
+  --card: #ffffff;
+  --warm: #b4552d;
+  --warm-soft: #f3e2d8;
+  --line: #e3dcd0;
+  --muted: #7a746a;
+  --ok: #3e7048;
+  --warn: #8a5a00;
+  --link: #7a4a18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 3px solid var(--warm);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--warm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.topnav > a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.topnav > a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+.topnav > a:hover { background: var(--warm-soft); }
+
+.nav-group { font-family: 'Segoe UI', system-ui, sans-serif; }
+.nav-group summary {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary::before { content: '▸ '; color: var(--muted); }
+.nav-group[open] summary::before { content: '▾ '; }
+.nav-group summary:hover { background: var(--warm-soft); }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+  min-width: 210px;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.nav-links a:hover { background: var(--warm-soft); }
+.nav-links a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+
+.page { max-width: 46rem; margin: 24px auto 48px; padding: 0 20px; }
+
+article h1 { font-size: 2rem; line-height: 1.25; margin: 0.6em 0 0.7em; color: var(--warm); }
+article h2 { font-size: 1.4rem; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+article p { margin: 0.9em 0; }
+article a { color: var(--link); }
+article ul, article ol { padding-left: 1.5em; }
+article li { margin: 0.35em 0; }
+article ul ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 18px;
+  background: var(--warm-soft);
+  border-left: 4px solid var(--warm);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p { margin: 0.4em 0; }
+
+pre {
+  background: #f2eee6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2eee6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--warm-soft); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 0.88rem; }
+tbody tr:nth-child(even) { background: #fdfbf7; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+
+.checkbox { color: var(--warm); font-size: 1.1em; margin-right: 6px; }
+worksheet { }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+.prevnext a {
+  color: var(--warm);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prevnext a:hover { background: var(--warm-soft); }
+.prevnext.muted, .muted { color: var(--muted); }
+
+.worksheet article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.site-footer .fineprint { max-width: 40rem; margin: 6px auto 0; font-size: 0.82rem; }
+
+@media print {
+  .site-header, .prevnext, .site-footer { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .worksheet article, article { border: none; padding: 0; }
+  pre { border: 1px solid #999; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">The Downsizing Parent Guide</a>
+  <nav class="topnav">
+    <a href="index.html" class="">Home</a>
+<details class="nav-group" open><summary>Chapters</summary><div class="nav-links"><a href="00-welcome.html" class="active">0. Welcome</a>
+<a href="01-family-meeting.html">1. Family Meeting</a>
+<a href="02-room-by-room.html">2. Room by Room</a>
+<a href="03-heirloom-cards.html">3. Heirloom Cards</a>
+<a href="04-donation-pickup.html">4. Donation Pickup</a>
+<a href="05-floor-plan.html">5. Floor Plan</a>
+<a href="06-estate-sale-vs-auction.html">6. Estate Sale vs Auction</a></div></details>
+<details class="nav-group" ><summary>Worksheets</summary><div class="nav-links"><a href="worksheets/family-meeting-agenda.html" class="">Family-Meeting Agenda</a>
+<a href="worksheets/room-sort-worksheet.html" class="">Room-Sort Worksheet</a></div></details>
+<a href="glossary.html" class="">Glossary</a>
+  </nav>
+</header>
+<main class="page ">
+<nav class="prevnext top"><a href="index.html" class="prev">← Home</a>
+<a href="01-family-meeting.html" class="next">Family Meeting →</a></nav>
+<article>
+<h1>Welcome — and Take a Breath</h1>
+<p>Downsizing a parent's home is one of the most tender projects a family will ever take on. You're not just moving furniture. You're moving a lifetime of meaning out of the rooms where it lived. Of course it feels overwhelming. It would be strange if it didn't.</p>
+<p>This manual exists to break that big, heavy project into small, kind, doable steps. By the end, you'll know how to:</p>
+<ul>
+<li>Call a family meeting that doesn't turn into a smackdown (siblings included).</li>
+<li>Sort one room at a time without burning out week one.</li>
+<li>Use decision cards for the keep-it / let-it-go heirloom questions.</li>
+<li>Plan donation pickups so unneeded items actually <em>leave</em>.</li>
+<li>Measure the new place and know what fits — before moving day.</li>
+<li>Understand estate sales vs. auctions at a beginner level.</li>
+</ul>
+<h2>Who this is for</h2>
+<p>Adult children, grandchildren, or other family helpers supporting a parent (or parents) through a downsizing move — often to a smaller house, condo, apartment, or senior living community. No experience needed. If you can read a checklist and carry a box, you're qualified.</p>
+<h2>Our one-size-fits-none promise</h2>
+<p>Every family is different. Some of you are doing this solo. Some have seven siblings and one of them will absolutely disagree about the mahogany dresser. Use the scripts and worksheets as starting points, then adjust to your family. Nothing here is a rule — it's a set of friendly tools.</p>
+<h2>The important fine print (please read)</h2>
+<blockquote>
+<p><strong>Education only.</strong> This guide is general information, not legal, financial, tax, or medical advice. Contracts, appraisals, powers of attorney, estate documents, and tax questions deserve professionals — a local elder-law or estate attorney, a CPA, or your parent's advisors. We explain concepts and vocabulary so you can ask good questions with confidence, not so you can go it alone on legal or money decisions.</p>
+</blockquote>
+<p>We'll repeat this gently along the way, because money and property touch every part of downsizing.</p>
+<h2>How to use this manual</h2>
+<ol>
+<li><strong>Read chapter by chapter, out of order if you want.</strong> Each chapter stands alone.</li>
+<li><strong>Print the worksheets</strong> (see the site's Worksheets section):
+<ul>
+<li>The <em>Room-Sort Worksheet</em> — your per-room sorting companion.</li>
+<li>The <em>Family-Meeting Agenda</em> — the one page that keeps the meeting on rails.</li>
+</ul>
+
+</li>
+<li><strong>Work in short sessions.</strong> Forty-five minutes with a timer beats a heroic weekend that ends in tears. This guide is deliberately low-energy and overwhelm-friendly.</li>
+<li><strong>Keep the voice warm.</strong> If a chapter feels "too much" today, it will wait for tomorrow.</li>
+</ol>
+<h2>A word about feelings (yours included)</h2>
+<p>Your parent will grieve a little, even when they're excited to move. You will too — often at weird moments, like when you find your elementary-school report cards taped inside a closet door. That's not a problem to fix; it's part of the process. Build in breaks, bring photos of the new place, and let nostalgia have a chair in the room.</p>
+<p>You've got this. Let's start with the meeting that sets the tone for everything else.</p>
+<p><em>© Asdale Dynamics, LLC — a beginner-friendly guide in the spirit of plain English, step by step, never condescending.</em></p>
+
+</article>
+<nav class="prevnext bottom"><a href="index.html" class="prev">← Home</a>
+<a href="01-family-meeting.html" class="next">Family Meeting →</a></nav>
+</main>
+<footer class="site-footer">
+  <p><strong>The Downsizing Parent Guide</strong> © Asdale Dynamics, LLC 2026</p>
+  <p class="fineprint">Education only — this site is general information, not legal, financial, tax, or medical advice. For document, appraisal, contract, or money questions, please bring real numbers to a local professional.</p>
+</footer>
+</body>
+</html>

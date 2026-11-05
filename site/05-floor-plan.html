@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measuring and Floor-Planning the New Place — The Downsizing Parent Guide</title>
+<style>
+:root {
+  --ink: #2c2a26;
+  --paper: #fbf8f2;
+  --card: #ffffff;
+  --warm: #b4552d;
+  --warm-soft: #f3e2d8;
+  --line: #e3dcd0;
+  --muted: #7a746a;
+  --ok: #3e7048;
+  --warn: #8a5a00;
+  --link: #7a4a18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 3px solid var(--warm);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--warm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.topnav > a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.topnav > a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+.topnav > a:hover { background: var(--warm-soft); }
+
+.nav-group { font-family: 'Segoe UI', system-ui, sans-serif; }
+.nav-group summary {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary::before { content: '▸ '; color: var(--muted); }
+.nav-group[open] summary::before { content: '▾ '; }
+.nav-group summary:hover { background: var(--warm-soft); }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+  min-width: 210px;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.nav-links a:hover { background: var(--warm-soft); }
+.nav-links a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+
+.page { max-width: 46rem; margin: 24px auto 48px; padding: 0 20px; }
+
+article h1 { font-size: 2rem; line-height: 1.25; margin: 0.6em 0 0.7em; color: var(--warm); }
+article h2 { font-size: 1.4rem; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+article p { margin: 0.9em 0; }
+article a { color: var(--link); }
+article ul, article ol { padding-left: 1.5em; }
+article li { margin: 0.35em 0; }
+article ul ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 18px;
+  background: var(--warm-soft);
+  border-left: 4px solid var(--warm);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p { margin: 0.4em 0; }
+
+pre {
+  background: #f2eee6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2eee6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--warm-soft); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 0.88rem; }
+tbody tr:nth-child(even) { background: #fdfbf7; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+
+.checkbox { color: var(--warm); font-size: 1.1em; margin-right: 6px; }
+worksheet { }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+.prevnext a {
+  color: var(--warm);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prevnext a:hover { background: var(--warm-soft); }
+.prevnext.muted, .muted { color: var(--muted); }
+
+.worksheet article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.site-footer .fineprint { max-width: 40rem; margin: 6px auto 0; font-size: 0.82rem; }
+
+@media print {
+  .site-header, .prevnext, .site-footer { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .worksheet article, article { border: none; padding: 0; }
+  pre { border: 1px solid #999; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">The Downsizing Parent Guide</a>
+  <nav class="topnav">
+    <a href="index.html" class="">Home</a>
+<details class="nav-group" open><summary>Chapters</summary><div class="nav-links"><a href="00-welcome.html">0. Welcome</a>
+<a href="01-family-meeting.html">1. Family Meeting</a>
+<a href="02-room-by-room.html">2. Room by Room</a>
+<a href="03-heirloom-cards.html">3. Heirloom Cards</a>
+<a href="04-donation-pickup.html">4. Donation Pickup</a>
+<a href="05-floor-plan.html" class="active">5. Floor Plan</a>
+<a href="06-estate-sale-vs-auction.html">6. Estate Sale vs Auction</a></div></details>
+<details class="nav-group" ><summary>Worksheets</summary><div class="nav-links"><a href="worksheets/family-meeting-agenda.html" class="">Family-Meeting Agenda</a>
+<a href="worksheets/room-sort-worksheet.html" class="">Room-Sort Worksheet</a></div></details>
+<a href="glossary.html" class="">Glossary</a>
+  </nav>
+</header>
+<main class="page ">
+<nav class="prevnext top"><a href="04-donation-pickup.html" class="prev">← Donation Pickup</a>
+<a href="06-estate-sale-vs-auction.html" class="next">Estate Sale vs Auction →</a></nav>
+<article>
+<h1>Measuring and Floor-Planning the New Place</h1>
+<p>The single happiest downsizing chapter is this one, because it's the one with actual good news: the new place can absolutely work — <em>if</em> you measure it properly and plan where the keepers go before the truck arrives. Fifty dollars of tape measure and graph paper beats ten thousand dollars of "it doesn't fit, return it, what now."</p>
+<blockquote>
+<p><strong>Education only:</strong> this chapter teaches measurement and planning. For questions like "what does a senior-living community's contract include," "what's a realistic monthly budget for a mortgage or rent plus services," or "can you afford this," bring real numbers to a fee-only financial advisor or housing counselor — not to this friendly book.</p>
+</blockquote>
+<h2>The 9-measurements sweep</h2>
+<p>Visit the new place (or its floor plan from the community's office — ask nicely, they usually have one) and record these. Bring one graph-ruled sheet per room, pencil, and a helper who counts while you hold.</p>
+<p>Per room, measure and write down:</p>
+<ol>
+<li><strong>Wall lengths</strong> (corner to corner)</li>
+<li><strong>Ceiling height</strong> (yes, in more than one spot — older buildings sag)</li>
+<li><strong>Door openings:</strong> width <em>and</em> height of every doorway, plus <strong>swing direction</strong> (in/out)</li>
+<li><strong>Hallways and turns</strong> on every path from the truck unloading spot to each room — width plus corner angles. This is the hidden one, and the reason loveseats fail</li>
+<li><strong>Windows:</strong> height, width, and sill height (affects furniture placement and blind shopping)</li>
+<li><strong>Outlets:</strong> count per wall (this changes where lamps, nightstands, and the coffee maker can go)</li>
+<li><strong>Alcoves, radiators, built-ins, weird bumps</strong> that steal floor space — everyone forgets the radiator</li>
+<li><strong>Fridge/sink/stove rough sizes</strong> if it's a full kitchen and they exist already</li>
+<li><strong>Closet interiors</strong> (depth and hanging rod width), not just doors</li>
+</ol>
+<p>Photograph every wall straight-on with a tape measure in the frame. The photos are worth more than your memory during Box Day.</p>
+<h2>The keeper inventory (30 minutes with the sticker charts)</h2>
+<p>Walk the staging zone's Center wall. For each large item, note: <strong>name, width, depth, height, weight class (can two people move it?), and current shape</strong> (saggy couch? solid dresser?). A phone spreadsheet or the printable worksheet works — the point is <em>counts and dimensions</em>, not a decorating heart.</p>
+<p>Measure the item's <strong>diagonal depth</strong> for anything that will need to rotate through a doorway (couches, sectionals, big dressers): measure from the front bottom corner to the back top corner. That number, not the depth, is what turns corners.</p>
+<h2>Graph-paper planning (the fun part)</h2>
+<ul>
+<li><strong>Scale:</strong> one square = 6 inches (or 25 cm). So a 12-ft wall = 24 squares; a 9-ft wall = 18.</li>
+<li>Draw the room's footprint, then cut paper rectangles for the big keeper items to scale, labeled.</li>
+<li>Move the cutouts around. Pencil eraser marks are cheaper than incorrect trucks.</li>
+<li>Include the <strong>door-swing arcs</strong> on the drawing; sofas across doors are a real thing that real people do.</li>
+<li>Include a <strong>3-foot clearance zone</strong> around the bed, toilet-level paths, and anywhere a walker or wheelchair might travel — plan major furniture against those arcs first, decorations last. (Mobility needs change; the plan should leave room to change with them.)</li>
+<li>Photograph each finished room plan. Tape a printed copy inside the door of the matching room in the old house, so packing Box Day has a map of <em>destination room by name</em>: "Living-Rm East wall, by window."</li>
+</ul>
+<p><strong>The 80% rule of thumb.</strong> Budget keepers to occupy no more than ~80% of the planned room footprint, <em>before</em> you count in extra clearance zones. The 20% remainder absorbs life: the step stool, the wheelchair turn, the suitcases, humanity.</p>
+<h2>The furniture verdict pass</h2>
+<p>Now the honest part. With both numbers in hand — new-room X and keeper-item Y — score every item as:</p>
+<ul>
+<li><strong>GREEN — definitely fits,</strong> labeled with its plan-wall: "Living-Rm, North wall" (write it on masking tape ON the item).</li>
+<li>**YELLOW — fits in <em>one place</em>, if nothing else claims it:** put on the plan; yellow items lose to any green item wanting the same wall.</li>
+<li><strong>RED — doesn't fit:</strong> goes to Gift or Donate/Sell with dignity — <em>before</em> prices attach. Disposing of red furniture is a million times easier when no young hope is attached to the price tag.</li>
+</ul>
+<p>Check at minimum the big five: sofa, beds, main cabinets/china cabinet, the good desk, and the dining table — those are usually the only items that genuinely matter. Everything else fits, or story-grades away (<a href="03-heirloom-cards.html">heirloom cards</a>).</p>
+<p>Hit the biggest trouble spots first — corner sofas, sectionals, oversize chairs. Those get the diagonal-depth test, and yes, the answer is often "sectional doesn't survive the turn." Cross it off the plan and move on; a smaller loveseat usually suits a downsized living room better anyway.</p>
+<h2>Vertical wins and multi-use buys</h2>
+<p>Where floor space is scarce, look up and inside:</p>
+<ul>
+<li><strong>Shelving and wall storage</strong> — above dressers, above desks, above radiators.</li>
+<li><strong>Bed risers + matching low beds</strong> with under-bed bins for linens; a lower bed plus under-bed drawers doubles a small bedroom.</li>
+<li><strong>Nesting tables, drop-leaf tables, storage ottomans</strong> — furniture that's multiple furniture in one footprint.</li>
+<li><strong>Vertical plates/hooks in the garage or closet</strong> for the folding/ladder-class items.</li>
+<li><strong>Mirror-full walls</strong> visually double a tight space for free, if mirrors already exist.</li>
+</ul>
+<h2>Fitting the humans, not just the furniture</h2>
+<p>The item that matters more than the sofa is the <strong>person</strong>. Measure paths while <em>walking like your parent walks</em>: using the hand rail? Using the walker? Pause on the second step of every staircase? A "fits the floor plan but fails the human" plan is not a plan; go back and re-plan with that counted in. Consider walking the routes with your parent present if they're up for it — they usually spot the trouble the tape measure can't.</p>
+<h2>Day-before-truck checklist</h2>
+<ul>
+<li><span class="checkbox" aria-hidden="true">☐</span>Every keeper item labeled with its destination room <em>and</em> plan-wall</li>
+<li><span class="checkbox" aria-hidden="true">☐</span>Room plans printed and taped inside each new-home room door</li>
+<li><span class="checkbox" aria-hidden="true">☐</span>Diagonal too-big reds already gone (sell-donate complete)</li>
+<li><span class="checkbox" aria-hidden="true">☐</span>Hallway-turn routes for the truckers walk-through'd and doors <strong>removed and set aside</strong> if needed</li>
+<li><span class="checkbox" aria-hidden="true">☐</span>Gate codes, elevator reservations (many communities require booking a freight elevator!), and neighbor courtesy notes ready</li>
+<li><span class="checkbox" aria-hidden="true">☐</span>Your parent's day-of plan: some prefer to be present; others prefer "first report from a finished quieter home." Honor theirs.</li>
+</ul>
+<p>You've measured, planned, and pre-labeled. Now the object with the highest price tag: chapter 6, estate sale vs auction.</p>
+
+</article>
+<nav class="prevnext bottom"><a href="04-donation-pickup.html" class="prev">← Donation Pickup</a>
+<a href="06-estate-sale-vs-auction.html" class="next">Estate Sale vs Auction →</a></nav>
+</main>
+<footer class="site-footer">
+  <p><strong>The Downsizing Parent Guide</strong> © Asdale Dynamics, LLC 2026</p>
+  <p class="fineprint">Education only — this site is general information, not legal, financial, tax, or medical advice. For document, appraisal, contract, or money questions, please bring real numbers to a local professional.</p>
+</footer>
+</body>
+</html>

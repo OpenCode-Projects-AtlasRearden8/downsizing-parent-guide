@@ -1,0 +1,25 @@
+{
+  "name": "downsizing-parent-guide",
+  "version": "1.0.0",
+  "description": "An emotionally-aware manual for helping a parent downsize: family meeting scripts, room-by-room sorting, heirloom decision cards, donation pickups, floor-plan measuring, and estate-sale vs auction basics. Markdown docs build into a static HTML site. Education only — never legal or financial advice.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/",
+    "start": "npx --yes serve site"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "Asdale Dynamics, LLC",
+  "keywords": [
+    "downsizing",
+    "family",
+    "checklist",
+    "static-site",
+    "markdown",
+    "education"
+  ]
+}

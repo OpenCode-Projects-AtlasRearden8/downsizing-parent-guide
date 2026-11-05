@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estate Sale vs. Auction Basics — The Downsizing Parent Guide</title>
+<style>
+:root {
+  --ink: #2c2a26;
+  --paper: #fbf8f2;
+  --card: #ffffff;
+  --warm: #b4552d;
+  --warm-soft: #f3e2d8;
+  --line: #e3dcd0;
+  --muted: #7a746a;
+  --ok: #3e7048;
+  --warn: #8a5a00;
+  --link: #7a4a18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 3px solid var(--warm);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--warm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.topnav > a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.topnav > a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+.topnav > a:hover { background: var(--warm-soft); }
+
+.nav-group { font-family: 'Segoe UI', system-ui, sans-serif; }
+.nav-group summary {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary::before { content: '▸ '; color: var(--muted); }
+.nav-group[open] summary::before { content: '▾ '; }
+.nav-group summary:hover { background: var(--warm-soft); }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+  min-width: 210px;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.nav-links a:hover { background: var(--warm-soft); }
+.nav-links a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+
+.page { max-width: 46rem; margin: 24px auto 48px; padding: 0 20px; }
+
+article h1 { font-size: 2rem; line-height: 1.25; margin: 0.6em 0 0.7em; color: var(--warm); }
+article h2 { font-size: 1.4rem; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+article p { margin: 0.9em 0; }
+article a { color: var(--link); }
+article ul, article ol { padding-left: 1.5em; }
+article li { margin: 0.35em 0; }
+article ul ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 18px;
+  background: var(--warm-soft);
+  border-left: 4px solid var(--warm);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p { margin: 0.4em 0; }
+
+pre {
+  background: #f2eee6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2eee6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--warm-soft); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 0.88rem; }
+tbody tr:nth-child(even) { background: #fdfbf7; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+
+.checkbox { color: var(--warm); font-size: 1.1em; margin-right: 6px; }
+worksheet { }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+.prevnext a {
+  color: var(--warm);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prevnext a:hover { background: var(--warm-soft); }
+.prevnext.muted, .muted { color: var(--muted); }
+
+.worksheet article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.site-footer .fineprint { max-width: 40rem; margin: 6px auto 0; font-size: 0.82rem; }
+
+@media print {
+  .site-header, .prevnext, .site-footer { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .worksheet article, article { border: none; padding: 0; }
+  pre { border: 1px solid #999; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">The Downsizing Parent Guide</a>
+  <nav class="topnav">
+    <a href="index.html" class="">Home</a>
+<details class="nav-group" open><summary>Chapters</summary><div class="nav-links"><a href="00-welcome.html">0. Welcome</a>
+<a href="01-family-meeting.html">1. Family Meeting</a>
+<a href="02-room-by-room.html">2. Room by Room</a>
+<a href="03-heirloom-cards.html">3. Heirloom Cards</a>
+<a href="04-donation-pickup.html">4. Donation Pickup</a>
+<a href="05-floor-plan.html">5. Floor Plan</a>
+<a href="06-estate-sale-vs-auction.html" class="active">6. Estate Sale vs Auction</a></div></details>
+<details class="nav-group" ><summary>Worksheets</summary><div class="nav-links"><a href="worksheets/family-meeting-agenda.html" class="">Family-Meeting Agenda</a>
+<a href="worksheets/room-sort-worksheet.html" class="">Room-Sort Worksheet</a></div></details>
+<a href="glossary.html" class="">Glossary</a>
+  </nav>
+</header>
+<main class="page ">
+<nav class="prevnext top"><a href="05-floor-plan.html" class="prev">← Floor Plan</a>
+<a href="glossary.html" class="next">Glossary →</a></nav>
+<article>
+<h1>Estate Sale vs. Auction Basics</h1>
+<p>When the good stuff is too good for the donation truck — furniture with actual value, collections, tools, jewelry — you have basically two professional-flavored paths: an <strong>estate sale</strong> (everything priced, house open to the public for a weekend) or an <strong>auction</strong> (items sold to the highest bidder, often by a house or an online platform). This chapter is your beginner's map: how each works, what they cost, and how to choose.</p>
+<blockquote>
+<p><strong>Please read:</strong> this is general education, not legal, appraiser, tax, or financial advice. Contracts with sale companies, consignment terms, valuations, and the tax treatment of selling personal property deserve a professional — ideally before you sign anything. Our goal is that you understand the vocabulary enough to ask sharp questions.</p>
+</blockquote>
+<h2>Estate sales: how they work</h2>
+<p>A <strong>professional estate-sale company</strong> (or a well-run family DIY sale) prices everything in the home and opens it to the public for typically 2–3 days: often full-price Friday, discounted Saturday, deeper discounts or "bag sale" Sunday. Shoppers walk through, pick up marked items, and check out.</p>
+<p><strong>What to expect:</strong></p>
+<ul>
+<li><strong>Commission:</strong> commonly a percentage of total sales (20–40% is a common beginner's ballpark — verify locally; minimums may apply for smaller houses).</li>
+<li><strong>Company handles:</strong> pricing staff, staging, security, cash register/payment systems, advertising via mailing lists their regulars follow.</li>
+<li><strong>You typically handle (or negotiate):</strong> nothing being sold should be removed pre-sale; the company usually bans early sales and photo theft, but <em>read the contract</em> for what happens to unsold items — do they remove, donate, or leave?</li>
+<li><strong>Timeline:</strong> book 3–8 weeks out in many areas; good companies fill schedules fast.</li>
+<li><strong>Good fit when:</strong> the <em>housefull</em> is for sale — furniture plus kitchenware plus garage plus yard, and nobody wants to run it themselves.</li>
+</ul>
+<h2>Auctions: how they work</h2>
+<p>An <strong>auction house</strong> or auctioneer takes specific items (or lots) and sells them to the highest bidder, live or — increasingly — online-only. Items get a <strong>lot number</strong>, are photographed, listed, and marketed to the auction's buyer list.</p>
+<p><strong>Key terms for beginners (more in the <a href="glossary.html">Glossary</a>):</strong></p>
+<ul>
+<li><strong>Reserve price:</strong> the minimum the seller will accept; no sale below it. ("No-reserve" = sells no matter what.)</li>
+<li><strong>Buyer's premium:</strong> an added percent the <em>buyer</em> pays on top of the hammer price. It doesn't reduce your payout, but it changes what buyers bid, which can indirectly affect prices.</li>
+<li><strong>Seller's commission:</strong> your cost, usually a percent of the hammer price — watch it in fine print.</li>
+<li><strong>Hammer price:</strong> the winning bid.</li>
+<li><strong>Pass:</strong> the item didn't sell (didn't meet the reserve); check the contract for re-list or return fees.</li>
+</ul>
+<p><strong>Good fit when:</strong> there are specific standout items — a collection of coins, fine art, signed sports memorabilia, quality furniture by a known maker, vintage jewelry — where a competitive bidding audience beats a sticker price.</p>
+<h2>Side-by-side at a glance</h2>
+<table>
+<thead>
+<tr><th>Question</th><th>Estate sale</th><th>Auction</th></tr>
+</thead>
+<tbody>
+<tr><td>Sells</td><td>Whole-house breadth, quantity</td><td>Curated standouts, smaller high-value lots</td></tr>
+<tr><td>Typical seller cost</td><td>20–40% commission (verify)</td><td>10–25% seller's commission + possible listing/reserve fees (verify)</td></tr>
+<tr><td>Payout timing</td><td>Days to a week after sale</td><td>Weeks; after the auction closes and per contract</td></tr>
+<tr><td>Residence required</td><td>Yes, sale <em>in</em> the home</td><td>No — items go to the house's auction</td></tr>
+<tr><td>Price certainty</td><td>Marked prices, sold Friday</td><td>Market decides; reserve protects downside</td></tr>
+<tr><td>Best for</td><td>Compressing the <em>whole</em> project into one weekend</td><td>Extracting fair value from the <em>best</em> pieces</td></tr>
+<tr><td>Risk</td><td>Slow Friday weather = slow weekend</td><td>A "pass" unsold lot, plus fees for it</td></tr>
+</tbody>
+</table>
+<h2>The hybrid strategy most families quietly use</h2>
+<p>Choose <em>both</em>, in the right order:</p>
+<ol>
+<li><strong>Pull the standouts</strong> (the furniture with a known maker, the coin collection, the jewelry) and consign them to the right auction <strong>first</strong>.</li>
+<li><strong>Estate-sale what remains</strong> — the everyday furniture, tools, and household — with the standouts <em>removed and inventoried</em> so nobody bids on or takes something already promised to family.</li>
+<li><strong>Donate the leftovers</strong> (<a href="04-donation-pickup.html">Chapter 4</a> pickup, booked in advance).</li>
+</ol>
+<p>This matches the "Curate → Sell-out → Truck-out" rhythm and is easier on house-shuffling.</p>
+<h2>Vetting an estate-sale company (the call script)</h2>
+<blockquote>
+<p>"Hi — we're helping my mother downsize. Roughly how many rooms? Likely [x] pieces of furniture to be sold. Do you have a minimum? What's your commission range? Who's on the staff — is it bonded/insured? What happens to items that don't sell? And when are you next available?"</p>
+</blockquote>
+<p>Then ask for two references from families that used them recently, and read the sample contract <em>before</em> your parent signs anything. Also — trust your gut: a good estate-sale leader is kind to your parent at the door the same way they're kind to buyers at the register.</p>
+<h2>Choosing an auction house</h2>
+<ul>
+<li><strong>Specialty match matters more than proximity.</strong> A jewelry-specialist auction will out-price a generalist across three states; a regional furniture auction house that knows the makers beats a national generalist for a mahogany chest.</li>
+<li><strong>Check their past results.</strong> Ask for the <em>realized</em> prices (actual paid, not the estimate) of comparable items from the past year.</li>
+<li><strong>Ask every fee, out loud:</strong> seller's commission, listing/photography, reserve fee, insurance, transport, unsold-lot or return fees, and payout timing.</li>
+<li><strong>Transport and insurance in writing</strong> — who moves, who insures while insured.</li>
+</ul>
+<p>Keep copies of all of it in the family note and in the "Ask a professional" list alongside CPA/evaluations where value is significant.</p>
+<h2>DIY sale — a quick honesty note</h2>
+<p>You <em>can</em> run a garage sale yourself. For a handful of boxes, sure. For a whole downsizing, the pricing staffing, the crowd-management, the cash-box security, and the emotional toll of strangers walking through your parent's home make full-DIY rarely the best deal. If you do keep small DIY items (tools on marketplace, church rummage, etc.), treat it as an itinerary item owned by your Calendar Keeper, never as "the family will just do a sale." "Just do a sale" weighs about as much as a 1970s console television.</p>
+<h2>What to do with the money question</h2>
+<p>If selling proceeds matter — whether for budgeting the move, splitting among siblings, or estate/inheritance purposes — that is, again, <strong>professional ground</strong> (attorney, CPA, or fee-only financial advisor). What you can do as a family: keep one clear ledger of what sold where, at what price, with receipts, so your professionals and the family are reading from the same page. Transparency now prevents three inheritance arguments later.</p>
+<hr>
+<p>Now for the reference shelves: the <a href="glossary.html">Glossary</a>, and don't skip the two worksheets that make the other chapters real.</p>
+
+</article>
+<nav class="prevnext bottom"><a href="05-floor-plan.html" class="prev">← Floor Plan</a>
+<a href="glossary.html" class="next">Glossary →</a></nav>
+</main>
+<footer class="site-footer">
+  <p><strong>The Downsizing Parent Guide</strong> © Asdale Dynamics, LLC 2026</p>
+  <p class="fineprint">Education only — this site is general information, not legal, financial, tax, or medical advice. For document, appraisal, contract, or money questions, please bring real numbers to a local professional.</p>
+</footer>
+</body>
+</html>

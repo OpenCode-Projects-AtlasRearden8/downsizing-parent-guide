@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary — The Downsizing Parent Guide</title>
+<style>
+:root {
+  --ink: #2c2a26;
+  --paper: #fbf8f2;
+  --card: #ffffff;
+  --warm: #b4552d;
+  --warm-soft: #f3e2d8;
+  --line: #e3dcd0;
+  --muted: #7a746a;
+  --ok: #3e7048;
+  --warn: #8a5a00;
+  --link: #7a4a18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border-bottom: 3px solid var(--warm);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--warm);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.topnav > a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+.topnav > a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+.topnav > a:hover { background: var(--warm-soft); }
+
+.nav-group { font-family: 'Segoe UI', system-ui, sans-serif; }
+.nav-group summary {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  list-style: none;
+}
+.nav-group summary::-webkit-details-marker { display: none; }
+.nav-group summary::before { content: '▸ '; color: var(--muted); }
+.nav-group[open] summary::before { content: '▾ '; }
+.nav-group summary:hover { background: var(--warm-soft); }
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 6px;
+  min-width: 210px;
+}
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.nav-links a:hover { background: var(--warm-soft); }
+.nav-links a.active { background: var(--warm-soft); color: var(--warm); font-weight: 600; }
+
+.page { max-width: 46rem; margin: 24px auto 48px; padding: 0 20px; }
+
+article h1 { font-size: 2rem; line-height: 1.25; margin: 0.6em 0 0.7em; color: var(--warm); }
+article h2 { font-size: 1.4rem; margin-top: 1.8em; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+article h3 { font-size: 1.15rem; margin-top: 1.5em; }
+article p { margin: 0.9em 0; }
+article a { color: var(--link); }
+article ul, article ol { padding-left: 1.5em; }
+article li { margin: 0.35em 0; }
+article ul ul { margin-top: 0.2em; margin-bottom: 0.2em; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 12px 18px;
+  background: var(--warm-soft);
+  border-left: 4px solid var(--warm);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p { margin: 0.4em 0; }
+
+pre {
+  background: #f2eee6;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+code {
+  font-family: ui-monospace, 'Cascadia Mono', Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2eee6;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2em 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--warm-soft); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 0.88rem; }
+tbody tr:nth-child(even) { background: #fdfbf7; }
+
+hr { border: none; border-top: 1px solid var(--line); margin: 2em 0; }
+
+.checkbox { color: var(--warm); font-size: 1.1em; margin-right: 6px; }
+worksheet { }
+
+.prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+.prevnext a {
+  color: var(--warm);
+  text-decoration: none;
+  padding: 8px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prevnext a:hover { background: var(--warm-soft); }
+.prevnext.muted, .muted { color: var(--muted); }
+
+.worksheet article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 30px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+.site-footer .fineprint { max-width: 40rem; margin: 6px auto 0; font-size: 0.82rem; }
+
+@media print {
+  .site-header, .prevnext, .site-footer { display: none; }
+  body { background: #fff; font-size: 12pt; }
+  .worksheet article, article { border: none; padding: 0; }
+  pre { border: 1px solid #999; }
+}
+
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">The Downsizing Parent Guide</a>
+  <nav class="topnav">
+    <a href="index.html" class="">Home</a>
+<details class="nav-group" ><summary>Chapters</summary><div class="nav-links"><a href="00-welcome.html">0. Welcome</a>
+<a href="01-family-meeting.html">1. Family Meeting</a>
+<a href="02-room-by-room.html">2. Room by Room</a>
+<a href="03-heirloom-cards.html">3. Heirloom Cards</a>
+<a href="04-donation-pickup.html">4. Donation Pickup</a>
+<a href="05-floor-plan.html">5. Floor Plan</a>
+<a href="06-estate-sale-vs-auction.html">6. Estate Sale vs Auction</a></div></details>
+<details class="nav-group" ><summary>Worksheets</summary><div class="nav-links"><a href="worksheets/family-meeting-agenda.html" class="">Family-Meeting Agenda</a>
+<a href="worksheets/room-sort-worksheet.html" class="">Room-Sort Worksheet</a></div></details>
+<a href="glossary.html" class="active">Glossary</a>
+  </nav>
+</header>
+<main class="page ">
+<nav class="prevnext top"><a href="06-estate-sale-vs-auction.html" class="prev">← Estate Sale vs Auction</a>
+<a href="worksheets/family-meeting-agenda.html" class="next">Family-Meeting Agenda →</a></nav>
+<article>
+<h1>Glossary</h1>
+<p>Plain-English definitions of the words this manual uses — and the ones professionals will use on you. When in doubt, ask the professional to define their term out loud; the good ones love that. <strong>Remember: education only, not legal, financial, tax, or medical advice.</strong></p>
+<h2>People and documents</h2>
+<ul>
+<li><strong>Estate</strong> — All the property and belongings a person owns. "Estate sale" is really just "sell the belongings," not a statement about law.</li>
+<li><strong>Power of attorney (POA)</strong> — A legal document letting one person act for another (finances, health, depending on type). If your parent has one, understanding <em>what it covers</em> is professional-consultation territory.</li>
+<li><strong>Executor</strong> — The person named in a will to carry it out. Estate-sale companies often work with executors; that doesn't make your sale a legal proceeding.</li>
+<li><strong>Heirloom</strong> — Any object kept for family meaning. Value is emotional, and sometimes monetary, and the two are unrelated more often than you'd guess.</li>
+<li><strong>"Ask a professional" list</strong> — Our running family list of topics that need an attorney, CPA, or financial advisor. It's in the <a href="01-family-meeting.html">Family Meeting chapter</a> scripts. When a conversation turns legal-ish, add to the list and continue the meeting.</li>
+</ul>
+<h2>Sorting method</h2>
+<ul>
+<li><strong>Four doors</strong> — Keep, Gift, Donate/Sell, Let Go. Every object gets exactly one.</li>
+<li><strong>Staging zone</strong> — One room hosting everything already decided: Keep truck, Gift boxes, Donate boxes, Late-Decide shelf.</li>
+<li><strong>Green pile</strong> — The Keep pile during sorting, before it's judged item by item.</li>
+<li><strong>Late-Decide shelf</strong> — Where undecided "blue" items wait with a photo and a future revisit date. Items only move down, toward decision, never sideways.</li>
+<li><strong>Story-grade</strong> — A keepsake whose meaning survives as a photograph plus a recorded story (see <a href="03-heirloom-cards.html">Heirloom cards</a>).</li>
+<li><strong>Furniture-grade</strong> — A keepsake whose value requires the physical object to continue.</li>
+<li><strong>One-box-visit floor</strong> — On hard days, the minimum win: one box of true let-go leaves the house. Nothing else is graded.</li>
+</ul>
+<h2>Sales and money words</h2>
+<ul>
+<li><strong>Commission</strong> — The percent of sales a company keeps, either estate-sale or auction flavor.</li>
+<li><strong>Consignment</strong> — Handing items to a shop/auctioneer to sell on your behalf, for a percentage.</li>
+<li><strong>Reserve price</strong> — At auction, the minimum acceptable winning bid; below it, the lot doesn't sell.</li>
+<li><strong>Hammer price</strong> — The winning bid at an auction.</li>
+<li><strong>Buyer's premium</strong> — The percent a <em>buyer</em> pays on top of the hammer price.</li>
+<li><strong>Pass</strong> — A lot that didn't sell.</li>
+<li><strong>Realized price</strong> — What an auction lot <em>actually sold for</em>, as opposed to its pre-sale estimate.</li>
+<li><strong>Appraisal</strong> — A professional's opinion of an item's value. Formal appraisals (insurance-quality, IRS-quality) are professional work.</li>
+<li><strong>Provenance</strong> — An item's documented history (who owned it, where it came from). Provenance can multiply auction prices, so keep those family stories.</li>
+</ul>
+<h2>Logistics</h2>
+<ul>
+<li><strong>Manifest</strong> — A one-page count of what's in the day's pickup boxes, taped by the door.</li>
+<li><strong>Diagonal depth</strong> — The corner-to-corner number that decides whether a sofa can actually turn a hallway.</li>
+<li><strong>Freight elevator reservation</strong> — Many senior communities and buildings require booking the service elevator for moving; ask the community office <em>early</em>.</li>
+<li><strong>Certificate of insurance (COI)</strong> — Proof a mover/company carries insurance; some buildings require the mover's COI before moving day.</li>
+<li><strong>Textile recycling</strong> — Municipal bins or programs that accept fabric too worn for donation; check your county's solid-waste page for local rules.</li>
+</ul>
+<h2>Safety and disposal (bring your county website into this too)</h2>
+<ul>
+<li><strong>Medication take-back</strong> — Pharmacies and many police stations accept old medications; flushing or trashing them is usually wrong. Ask your pharmacist — it's their job to know, and they're typically happy to help.</li>
+<li><strong>Household hazardous waste</strong> — Paint, batteries, cleaners, propane, motor oil: your county's drop-off site. Never let these walk into the donation truck; a single leaking bottle can cost a charity its whole inventory.</li>
+<li><strong>Electronics (e-waste)</strong> — Best Buy-style retail drop-offs and municipal e-waste days; wipe drives before any device leaves the house, and ask your parent if any device holds photos you haven't saved (always check this before wiping!).</li>
+</ul>
+<hr>
+<h2>Where each term gets used</h2>
+<table>
+<thead>
+<tr><th>Term</th><th>Introduced in</th></tr>
+</thead>
+<tbody>
+<tr><td>Four doors, staging zone</td><td><a href="02-room-by-room.html">Room by Room</a></td></tr>
+<tr><td>Sibling roles, stop signal</td><td><a href="01-family-meeting.html">Family Meeting</a></td></tr>
+<tr><td>Decision card, story-grade</td><td><a href="03-heirloom-cards.html">Heirloom Cards</a></td></tr>
+<tr><td>Manifest, pickup calendar</td><td><a href="04-donation-pickup.html">Donation Pickup</a></td></tr>
+<tr><td>Diagonal depth, 80% rule</td><td><a href="05-floor-plan.html">Floor Plan</a></td></tr>
+<tr><td>Reserve, hammer, buyer's premium</td><td><a href="06-estate-sale-vs-auction.html">Estate Sale vs Auction</a></td></tr>
+</tbody>
+</table>
+<hr>
+<p><em>Terms change with local rules and over time — especially anything involving law, tax, or charity policy. When a term here meets your real life at a checkbook or a signature line, a local professional looks things up; this guide just gets you in the door speaking the language.</em></p>
+
+</article>
+<nav class="prevnext bottom"><a href="06-estate-sale-vs-auction.html" class="prev">← Estate Sale vs Auction</a>
+<a href="worksheets/family-meeting-agenda.html" class="next">Family-Meeting Agenda →</a></nav>
+</main>
+<footer class="site-footer">
+  <p><strong>The Downsizing Parent Guide</strong> © Asdale Dynamics, LLC 2026</p>
+  <p class="fineprint">Education only — this site is general information, not legal, financial, tax, or medical advice. For document, appraisal, contract, or money questions, please bring real numbers to a local professional.</p>
+</footer>
+</body>
+</html>
